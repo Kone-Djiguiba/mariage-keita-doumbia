@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiche Mariage Keita & Doumbia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:wght@700&family=Amiri&family=Cormorant+Garamond:wght@400;600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f3f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .a3-poster {
+            width: 297mm;
+            height: 420mm;
+            background: linear-gradient(to bottom, #0a0a0a 0%, #1a1a1a 100%);
+            color: #f5f5f5;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 20px solid #d4af37;
+            font-family: 'Cormorant Garamond', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        
+        .gold-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 25%),
+                url('https://www.transparenttextures.com/patterns/arabesque.png');
+            opacity: 0.15;
+        }
+        
+        .invitation-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .arabic {
+            font-family: 'Amiri', serif;
+            font-size: 2em;
+            color: rgba(212, 175, 55, 0.9);
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+        
+        .invitation-text {
+            font-size: 1.7em;
+            line-height: 1.8;
+            margin: 25px 0;
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.4);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+            width: 85%;
+            font-weight: 600;
+        }
+        
+        .families-names {
+            font-family: 'Marcellus', serif;
+            color: #d4af37;
+            font-size: 1.2em;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+        
+        .names-container {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .name {
+            font-family: 'Marcellus', serif;
+            font-size: 3.2em;
+            color: #ffffff;
+            letter-spacing: 2px;
+            line-height: 1.3;
+            margin: 10px 0;
+        }
+        
+        .last-name {
+            font-weight: bold;
+            color: #d4af37;
+            font-size: 1.1em;
+            display: block;
+            margin-top: 5px;
+            letter-spacing: 3px;
+        }
+        
+        .and {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            color: #d4af37;
+            margin: 15px 0;
+            font-weight: 400;
+        }
+        
+        .program-section {
+            width: 80%;
+            margin: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .program-title {
+            font-family: 'Marcellus', serif;
+            font-size: 1.8em;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #d4af37;
+            padding-bottom: 10px;
+        }
+        
+        .program-item {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        
+        .program-date {
+            font-family: 'Marcellus', serif;
+            color: #d4af37;
+            font-size: 1.2em;
+            min-width: 180px;
+            padding-right: 20px;
+            text-align: right;
+            border-right: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .program-event {
+            padding-left: 20px;
+            font-size: 1.1em;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        
+        .highlight {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        .quran-verse {
+            font-family: 'Amiri', serif;
+            font-size: 2em;
+            line-height: 1.8;
+            margin: 20px 0;
+            text-align: center;
+            direction: rtl;
+        }
+        
+        .quran-translation {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-top: 15px;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 40px;
+            width: calc(100% - 80px);
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .hashtag {
+            font-family: 'Marcellus', serif;
+            font-size: 1.3em;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: url('islamic-pattern-light.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0.08;
+        }
+        
+        .top-left {
+            top: 50px;
+            left: 50px;
+            transform: rotate(-15deg);
+        }
+        
+        .bottom-right {
+            bottom: 50px;
+            right: 50px;
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="a3-poster">
+        <div class="gold-overlay"></div>
+        
+        <div class="decoration top-left"></div>
+        <div class="decoration bottom-right"></div>
+        
+        <div class="invitation-header">
+            <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            
+            <div class="invitation-text">
+                Par la volonté du Très Miséricordieux<br>
+                Nous avons l'<span class="families-names">honneur</span> sacré de vous convier<br>
+                Au mariage béni de nos enfants
+            </div>
+        </div>
+        
+        <div class="names-container">
+            <div class="name">MOUSSA<br><span class="last-name">KEITA</span></div>
+            <div class="and">&</div>
+            <div class="name">MADOUSSOU<br><span class="last-name">DOUMBIA</span></div>
+        </div>
+        
+        <div class="program-section">
+            <div class="program-title">PROGRAMME DES CÉRÉMONIES</div>
+            
+            <div class="program-item">
+                <div class="program-date">Vendredi 20 juin 2025</div>
+                <div class="program-event"><span class="highlight">Fouroussiri</span> à Zouan-Hounien</div>
+            </div>
+            
+            <div class="program-item">
+                <div class="program-date">Mardi 24 juin 2025</div>
+                <div class="program-event"><span class="highlight">Lassiguili</span> au domicile de la mariée à Man</div>
+            </div>
+            
+            <div class="program-item">
+                <div class="program-date">Mercredi 25 juin 2025</div>
+                <div class="program-event"><span class="highlight">Danse de réjouissance</span> à Man</div>
+            </div>
+            
+            <div class="program-item">
+                <div class="program-date">Vendredi 28 juin 2025</div>
+                <div class="program-event"><span class="highlight">Waliman</span> au domicile du marié à Zouan-Hounien</div>
+            </div>
+        </div>
+        
+        <div class="quran-verse">
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+        </div>
+        <div class="quran-translation">
+            "Et parmi Ses signes Il a créé pour vous des épouses issues de vous-mêmes, afin que vous trouviez auprès d'elles le repos, et Il a établi entre vous l'amour et la miséricorde." (Sourate Ar-Roum, 30:21)
+        </div>
+        
+        <div class="footer">
+            <div class="hashtag">#Djiguiba2025</div>
+        </div>
+    </div>
+</body>
+</html>
